@@ -3,7 +3,7 @@
 {% import_yaml "maps/defaults/packages.yaml" as packages %}
 
 {% set packages = salt.grains.filter_by(packages['packages']) %}
-{% set packages = salt.grains.filter_by(packages, grain='os',default='Default')
+{% set packages = salt.grains.filter_by(packages, grain='os',default='Default') %}
 
 {% do salt.log.debug("networks: " ~ networks|json) %}
 {% do salt.log.debug("users: " ~ users|yaml) %}
