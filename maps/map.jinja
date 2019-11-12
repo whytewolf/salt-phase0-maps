@@ -4,7 +4,14 @@
 
 {% set packages = salt.grains.filter_by(packages['packages']) %}
 {% set packages = salt.grains.filter_by(packages, grain='os',default='Default') %}
+{% set packages = salt.grains.filter_by(packages, grain='osmajorversion', default='Default') %}
 
-{% do salt.log.debug("networks: " ~ networks|json) %}
-{% do salt.log.debug("users: " ~ users|yaml) %}
-{% do salt.log.debug("packages: " ~ packages|yaml) %}
+{% do salt.log.trace("networks: " ~ networks|json) %}
+{% do salt.log.trace("users: " ~ users|yaml) %}
+{% do salt.log.trace("packages: " ~ packages|yaml) %}
+
+{% set config['networks'] = networks %}
+{% set config['users'] = users %}
+{% set config['packages'] = packages %}
+
+{% do salt.log.debug('config: ' ~ config|yaml) %}
