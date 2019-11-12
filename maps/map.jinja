@@ -6,4 +6,4 @@
 {% do salt.log.debug("users: " ~ users|yaml) %}
 {% do salt.log.debug("packages: " ~ packages|yaml) %}
 
-{% set packages = salt.grains.filter_by(packages['packages'])
+{% set packages = salt.grains.filter_by(packages)
