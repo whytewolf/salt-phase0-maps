@@ -1,0 +1,36 @@
+network:
+  mgmt:
+    cidr: '10.40.0.0/16'
+    gateway: '10.40.0.1'
+    netmask: '255.255.0.0'
+    vlan: '40'
+    ipv6: false
+    desc: 'network manegment and core server network'
+  public:
+    cidr: '192.168.1.0/24'
+    gateway: '192.168.1.1'
+    netmask: '255.255.255.0'
+    vlan: '257'
+    ipv6: True
+    desc: 'wifi and none server based user systems. the public place'
+  openstack:
+    cidr: '10.41.0.0/16'
+    gateway: '10.41.0.1'
+    netmask: '255.255.0.0'
+    vlan: '41'
+    ipv6: false
+    desc: 'Openstack public network'
+  osbacking:
+    cidr: '10.200.0.0/24'
+    gateway: none
+    netmask: '255.255.255.0'
+    vlan: '300'
+    ipv6: false
+    desc: 'backend for vxlan addresses for openstack data'
+  openstack_private:
+    cidr: '172.16.0.0/12'
+    gateway: 'do_not_check'
+    netmask: 'do_not_check'
+    vlan: 'do_not_check'
+    ipv6: false
+    desc: 'a set of netmasks in the 172 range for openstack private networks to use.'

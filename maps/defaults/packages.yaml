@@ -1,0 +1,31 @@
+packages:
+  RedHat:
+    Default:
+      '6':
+        - vim
+        - wget
+      '7':
+        - vim
+        - wget
+        - python-setproctitle
+        - salt-minion
+        - sysstat
+        - zsh
+        - tmux
+        - unzip
+        - deltarpm
+        - python-inotify
+        - mutt
+        - python2-pip
+        - unzip
+      '8':
+        - vim
+        - wget
+        - tmux
+        - salt-minion
+        - sysstat
+  Debian:
+    'Raspbian':
+      '9':
+        - vim
+        - wget
